@@ -74,16 +74,29 @@ _Your README.md must include:_
 **Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+The application is now using Handlebars for the templating engine. There is a tmeplate created in the HTML that is being populated on the fly by Handlebars.js
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Download the source code, and fire up live server. Optionally, you could push it to a server.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Handlebars.js / JQuery / HTML / (minimal) CSS
 
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+Author: Candice 'canned-ice' Thomas <candicebthomas@gmail.com>
+Date:   Fri Aug 17 12:22:13 2018 -0700 - got arrow functions to work
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 17 10:58:45 2018 -0700 - finialized template
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 17 10:30:58 2018 -0700 - added handlebars template
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 17 09:20:50 2018 -0700 - updated readme / index.html / pull request template
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 17 09:12:19 2018 -0700  - created starter code folder and branch
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
 
