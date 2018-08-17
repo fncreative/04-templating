@@ -17,7 +17,44 @@
         - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
         - Insert placeholder keys.
         - If your object doesn't have values you need yet, you can add those properties in the model.
+
+          Article.prototype.toHtml = function() {
+          let $newArticle = $('article.template').clone();
+          $newArticle.removeClass('template');
+          if (!this.publishedOn) {
+            $newArticle.addClass('draft');
+          }
+          $newArticle.attr('data-category', this.category);
+          $newArticle.attr('data-author', this.author);
+          $newArticle.find('address a').html(this.author);
+          $newArticle.find('address a').attr('href', this.authorUrl);
+          $newArticle.find('h1:first').html(this.title);
+          $newArticle.find('.article-body').html(this.body);
+          $newArticle.find('time').attr('datetime', this.publishedOn);
+          $newArticle.find('time').attr('title', this.publishedOn);
+          $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+          $newArticle.append('<hr>');
+          return $newArticle;
+        };
     -->
+
+    <!-- Handlebars template -->
+    <script id="blog-template" type="text/x-handlebars-template">
+      <article class="template" data-category="{{category}}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div>
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            published <time datetime="{{publishedOn}}">{{publishedOn}} days ago</time>
+          </div>
+        </header>
+        <section class="article-body">{{body}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+        <hr/>
+      </article>
+    </script>
+  <!-- End Handlebars template -->
+  
   </head>
   <body>
     <header class="clearfix">
