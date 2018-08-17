@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="vendor/styles/icons.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 
     <!--
@@ -39,8 +39,8 @@
     -->
 
     <!-- Handlebars template -->
-    <script id="blog-template" type="text/x-handlebars-template">
-      <article class="template" data-category="{{category}}}">
+    <script id="blog-template" type="text/x-handlebars-template"> {{#each articles}}
+      <article data-category="{{category}}">
         <header>
           <h1>{{title}}</h1>
           <div>
@@ -48,13 +48,13 @@
             published <time datetime="{{publishedOn}}">{{publishedOn}} days ago</time>
           </div>
         </header>
-        <section class="article-body">{{body}}</section>
+        <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
         <hr/>
-      </article>
+      </article> {{/each}}
     </script>
   <!-- End Handlebars template -->
-  
+
   </head>
   <body>
     <header class="clearfix">
@@ -112,6 +112,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- TODO: Include Handlebars.JS from a CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
   </body>
