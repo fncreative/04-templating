@@ -39,19 +39,25 @@
     -->
 
     <!-- Handlebars template -->
-    <script id="blog-template" type="text/x-handlebars-template"> {{#each articles}}
-      <article data-category="{{category}}">
+    <script id="blog-template" type="text/x-handlebars-template">
+      <article data-category="{{category}}" data-author="{{author}}">
         <header>
-          <h1>{{title}}</h1>
+          <h1>{{ title }}</h1>
           <div>
-            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            By <address><a href="{{authorUrl}}">{{ author }}</a></address>
             published <time datetime="{{publishedOn}}">{{publishedOn}} days ago</time>
           </div>
         </header>
-        <section class="article-body">{{{body}}}</section>
+        <section class="article-body">{{{ body }}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
         <hr/>
-      </article> {{/each}}
+      </article>
+    </script>
+    <script id="author-filter-template" type="text/x-handlebars-template">
+        <option value="{{author}}">{{author}}</option>
+    </script>
+    <script id="category-filter-template" type="text/x-handlebars-template">
+      <option value="{{category}}">{{category}}</option>
     </script>
   <!-- End Handlebars template -->
 
@@ -91,6 +97,7 @@
           </ul>
         </div>
       </section>
+      <section id="shit"></section>
       <section id="about" class="tab-content">
         <header>
           Welcome to my Blog
