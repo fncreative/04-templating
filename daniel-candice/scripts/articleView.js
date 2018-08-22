@@ -71,10 +71,10 @@ articleView.setTeasers = () => {
   });
 };
 
-$(document).ready(function() {
+$(() => {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-})
+});
